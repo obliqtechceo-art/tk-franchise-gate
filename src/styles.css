@@ -95,6 +95,10 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+
+  /* Login page brand gradient */
+  --login-gradient-start: oklch(0.55 0.18 260);
+  --login-gradient-end: oklch(0.45 0.18 300);
 }
 
 .dark {
@@ -130,6 +134,33 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@utility login-bg {
+  background: linear-gradient(135deg, var(--login-gradient-start), var(--login-gradient-end));
+}
+
+@utility login-btn {
+  background: linear-gradient(135deg, var(--login-gradient-start), var(--login-gradient-end));
+  color: oklch(1 0 0);
+  box-shadow: 0 10px 25px -8px oklch(0.45 0.18 300 / 40%);
+
+  &:hover {
+    filter: brightness(1.05);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+@utility login-footer-heading {
+  color: oklch(1 0 0);
+}
+
+@utility login-footer-text {
+  color: oklch(1 0 0 / 80%);
 }
 
 @layer base {
